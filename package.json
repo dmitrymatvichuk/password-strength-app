@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=/password-strength-app/"
+    "deploy": "ng build --configuration production && npx angular-cli-ghpages --dir=dist/password-strength-app"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +27,7 @@
     "@angular-devkit/build-angular": "^18.1.1",
     "@angular/cli": "^18.1.1",
     "@angular/compiler-cli": "^18.1.0",
+    "@types/cookie": "^0.6.0",
     "@types/jasmine": "~5.1.0",
     "angular-cli-ghpages": "^2.0.1",
     "jasmine-core": "~5.1.0",

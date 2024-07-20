@@ -1,27 +1,49 @@
-# PasswordStrengthApp
+## Task: Create an Application to Test Password Strength
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
+### Objective
 
-## Development server
+Create a password input field with three sections below it to display the strength of the password. The password strength indicator should update in real-time as the user types.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Requirements
 
-## Code scaffolding
+#### Password Input Field
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- A field for users to input their password.
 
-## Build
+#### Sections for Displaying Password Strength
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Three sections located directly below the password input field.
+- The color of each section will change based on the strength of the password.
 
-## Running unit tests
+### Password Strength Calculation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. **Weak Password**
+   - Contains only letters, digits, or symbols.
 
-## Running end-to-end tests
+2. **Medium Password**
+   - Contains a combination of:
+     - Letters and symbols
+     - Letters and digits
+     - Digits and symbols
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. **Strong Password**
+   - Contains letters, symbols, and digits.
 
-## Further help
+### Color Indication
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. **Empty Field**
+   - All sections are gray.
+
+2. **Password Less Than 8 Characters**
+   - All sections are red.
+
+3. **Weak Password**
+   - The first section is red.
+   - The remaining two sections are gray.
+
+4. **Medium Password**
+   - The first and second sections are yellow.
+   - The third section is gray.
+
+5. **Strong Password**
+   - All sections are green.
