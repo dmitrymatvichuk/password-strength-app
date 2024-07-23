@@ -5,12 +5,18 @@ import { Injectable } from '@angular/core';
 })
 export class PasswordStrengthService {
   getStrength(password: string): string {
-    if (password.length < 6) {
+    const hasLetters = /[a-zA-Z]/.test(password);
+    const hasNumbers = /\d/.test(password);
+    const hasSymbols = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    if (password.length < 8) {
       return 'Weak';
-    } else if (password.length < 12) {
-      return 'Moderate';
-    } else {
+    } else if (hasLetters && hasNumbers && hasSymbols) {
       return 'Strong';
+    } else if ((hasLetters && hasNumbers) || (hasLetters && hasSymbols) || (hasNumbers && hasSymbols)) {
+      return 'Medium';
+    } else {
+      return 'Weak';
     }
   }
 }
